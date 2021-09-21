@@ -113,7 +113,7 @@ module.exports = {
                         options: {
                             postcssOptions: {
                                 plugins: [
-                                    require.resolve('css-modules-escaper/postcss-plugin')
+                                    require.resolve('css-modules-escaper/src/postcss-plugin')
                                 ],
                             },
                         },
