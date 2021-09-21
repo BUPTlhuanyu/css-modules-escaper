@@ -6,7 +6,6 @@ const ESCAPE_PREFIX = require('./postcss-plugin').__escapePrefix;
 class WebpackCssModuleEscaperPlugin {
     apply(compiler) {
         const rules = compiler.options.module.rules;
-        debugger;
         for (let rule of rules) {
             if (Array.isArray(rule.use)) {
                 for (let loader of rule.use) {

@@ -1,6 +1,6 @@
 {
     "name": "css-modules-escaper",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "postcss-plugin/webpack-loader for escape css-modules's compile",
     "main": "src/index.js",
     "files": [
