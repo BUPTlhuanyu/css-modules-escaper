@@ -1,0 +1,72 @@
+.test1 {
+    animation: 3s linear 1s demo1; 
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes demo1 {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+.test2 {
+    animation: 3s ease-in 1s 2 reverse both paused demo2;; 
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes demo2 {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+.test3 {
+    animation: 3s linear 1s demo3; 
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes demo3 {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+.test4 {
+    animation: 3s ease-in SlideIn, .2s .1s ease FadeIn;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes SlideIn {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+@keyframes FadeIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+    }
+}

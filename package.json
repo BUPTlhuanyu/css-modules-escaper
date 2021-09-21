@@ -1,0 +1,68 @@
+{
+    "name": "css-modules-escaper",
+    "version": "0.0.1",
+    "description": "postcss-plugin/webpack-loader for escape css-modules's compile",
+    "main": "src/index.js",
+    "files": [
+        "src",
+        "README.md",
+        "CHANGELOG.md"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BUPTlhuanyu/css-modules-escaper.git"
+    },
+    "author": "BUPTlhuanyu",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BUPTlhuanyu/css-modules-escaper/issues"
+    },
+    "lint-staged": {
+        "!(example|dist|output|__mocks__)/**/*.(ts|js)": [
+            "eslint"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "gitmoji"
+        ],
+        "rules": {
+            "header-max-length": [
+                2,
+                "always",
+                120
+            ],
+            "subject-case": [
+                0,
+                "always",
+                "sentence-case"
+            ]
+        }
+    },
+    "homepage": "https://github.com/BUPTlhuanyu/css-modules-escaper#readme",
+    "dependencies": {
+        "@hookun/parse-animation-shorthand": "^0.1.2",
+        "postcss": "^8.3.6"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/core": "^13.1.0",
+        "@commitlint/travis-cli": "^13.1.0",
+        "@ecomfe/eslint-config": "^7.3.0",
+        "commitizen": "^4.2.4",
+        "commitlint-config-gitmoji": "^2.2.5",
+        "eslint": "^7.32.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2"
+    }
+}
