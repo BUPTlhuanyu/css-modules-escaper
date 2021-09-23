@@ -6,7 +6,6 @@ const {parse, serialize} = require('@hookun/parse-animation-shorthand');
 const CssSyntaxError = require('./CssSyntaxError');
 
 const ESCAPE_PREFIX = 'SAN_NATIVE_CLI' + Math.random().toString(36).slice(2);
-const REVERSED_ANIMATION_NAME = ['none', 'initial', 'inherit', 'unset'];
 const PREFIXERS = ['-webkit-', '-moz-', '-o-', ''];
 const PREFIXED_ANIMATION = PREFIXERS.map(i => i + 'animation');
 const PREFIXED_ANIMATION_NAME = PREFIXERS.map(i => i + 'animation-name');
@@ -20,9 +19,7 @@ const postcssEscapeKeyframe = postcss.plugin('postcss-escape-keyframe', () => (c
                     const result = parse(node.value);
                     if (Array.isArray(result)) {
                         const postProcessedAnimation = result.map((animation) => {
-                            if (REVERSED_ANIMATION_NAME.indexOf(animation.name) < 0) {
-                                animation.name = `${ESCAPE_PREFIX}${animation.name}`;
-                            }
+                            animation.name = `${ESCAPE_PREFIX}${animation.name}`;
                             return serialize(animation);
                         }).join(',');
                         postProcessedAnimation && (node.value = postProcessedAnimation);
@@ -30,7 +27,7 @@ const postcssEscapeKeyframe = postcss.plugin('postcss-escape-keyframe', () => (c
                 } catch (error) {
                     throw new CssSyntaxError(error)
                 }
-            } else if (PREFIXED_ANIMATION_NAME.indexOf(node.prop) > -1 && REVERSED_ANIMATION_NAME.indexOf(node.value) < 0) {
+            } else if (PREFIXED_ANIMATION_NAME.indexOf(node.prop) > -1) {
                 node.value = `${ESCAPE_PREFIX}${node.value}`;
             }
         }
